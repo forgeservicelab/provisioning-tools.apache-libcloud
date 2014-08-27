@@ -35,6 +35,7 @@ AUTH_VERSION = '2.0_password' # Auth version
 SERVICE_NAME = 'nova' # OpenStack service name
 SERVICE_TYPE = 'compute' # OpenStack service type
 BASE_URL = 'https://cloud.forgeservicelab.fi:8777/v2/<tenant>' # Url for service 
+IMAGE_ID = '9ee35702-87d5-4216-a9fe-9e02bdad73a9' # Debian-7.6-server-amd64
 
 
 
@@ -125,7 +126,7 @@ def createNodes():
     size = [s for s in sizes if s.id == '3'][0] # id 3: name=m1.medium, vcpu=2, ram=4096 MB, disk=20 GB
 
     # Set image
-    image = [i for i in images if i.id == '9ee35702-87d5-4216-a9fe-9e02bdad73a9'][0] # Debian-7.6-server-amd64
+    image = [i for i in images if i.id == IMAGE_ID][0] 
 
     # Names for nodes
     nodeNames = [ 'forge-loadbalancer', 'forge-mysql-01', 'forge-mysql-02', 'forge-nfs-01', 'forge-nfs-02', 'forge-drupal-01', 'forge-drupal-02' ]
