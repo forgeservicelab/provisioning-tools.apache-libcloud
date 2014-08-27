@@ -15,6 +15,7 @@ import libcloud.security
 # Note: Not verifying SSL Cert poses a security risk (MITM attack)
 libcloud.security.VERIFY_SSL_CERT = True
 
+
 uinp = 0
 inventoryFilename = 'plaza.inventory'
 
@@ -34,6 +35,7 @@ AUTH_VERSION = '2.0_password' # Auth version
 SERVICE_NAME = 'nova' # OpenStack service name
 SERVICE_TYPE = 'compute' # OpenStack service type
 BASE_URL = 'https://cloud.forgeservicelab.fi:8777/v2/<tenant>' # Url for service 
+
 
 
 # List nodes
@@ -103,9 +105,9 @@ def createNodes():
         ex_force_auth_version=AUTH_VERSION,
         ex_tenant_name=TENANT,
         ex_service_region=FORGE_REGION,
-        ex_service_name='nova',
-        ex_service_type='compute',
-        ex_force_base_url='https://cloud.forgeservicelab.fi:8777/v2/weego'
+        ex_service_name=SERVICE_NAME,
+        ex_service_type=SERVICE_TYPE,
+        ex_force_base_url=BASE_URL
     )
     
     print '** Gathering the cloud information **\n'
@@ -180,9 +182,9 @@ def listVolumes():
         ex_force_auth_version=AUTH_VERSION,
         ex_tenant_name=TENANT,
         ex_service_region=FORGE_REGION,
-        ex_service_name='nova',
-        ex_service_type='compute',
-        ex_force_base_url='https://cloud.forgeservicelab.fi:8777/v2/weego'
+        ex_service_name=SERVICE_NAME,
+        ex_service_type=SERVICE_TYPE,
+        ex_force_base_url=BASE_URL
     )
 
     print '** Gathering the cloud information **\n'
@@ -221,9 +223,9 @@ def createVolumes():
         ex_force_auth_version=AUTH_VERSION,
         ex_tenant_name=TENANT,
         ex_service_region=FORGE_REGION,
-        ex_service_name='nova',
-        ex_service_type='compute',
-        ex_force_base_url='https://cloud.forgeservicelab.fi:8777/v2/weego'
+        ex_service_name=SERVICE_NAME,
+        ex_service_type=SERVICE_TYPE,
+        ex_force_base_url=BASE_URL
     )
 
     print '** Gathering the cloud information **\n'
@@ -282,9 +284,9 @@ def attachVolumes():
         ex_force_auth_version=AUTH_VERSION,
         ex_tenant_name=TENANT,
         ex_service_region=FORGE_REGION,
-        ex_service_name='nova',
-        ex_service_type='compute',
-        ex_force_base_url='https://cloud.forgeservicelab.fi:8777/v2/weego'
+        ex_service_name=SERVICE_NAME,
+        ex_service_type=SERVICE_TYPE,
+        ex_force_base_url=BASE_URL
     )
 
     print '** Gathering the cloud information **\n'
@@ -337,13 +339,13 @@ def listImages():
     driver = cls(
         username,
         password,
-        ex_force_auth_url='https://cloud.forgeservicelab.fi:5001',
-        ex_force_base_url='https://cloud.forgeservicelab.fi:8777/v2/weego',
-        ex_force_auth_version='2.0_password',
-        ex_tenant_name='weego',
-        ex_service_name='nova',
-        ex_service_type='compute',
-        ex_service_region='KajaaniDC1-prod'
+        ex_force_auth_url=AUTH_URL,
+        ex_force_base_url=BASE_URL,
+        ex_force_auth_version=AUTH_VERSION,
+        ex_tenant_name=TENANT,
+        ex_service_name=SERVICE_NAME,
+        ex_service_type=SERVICE_TYPE,
+        ex_service_region=FORGE_REGION
     )
     
     print '** Gathering the cloud information **\n'
@@ -376,13 +378,13 @@ def listSizes():
     driver = cls(
         username,
         password,
-        ex_force_auth_url='https://cloud.forgeservicelab.fi:5001',
-        ex_force_base_url='https://cloud.forgeservicelab.fi:8777/v2/weego',
-        ex_force_auth_version='2.0_password',
-        ex_tenant_name='weego',
-        ex_service_name='nova',
-        ex_service_type='compute',
-        ex_service_region='KajaaniDC1-prod'
+        ex_force_auth_url=AUTH_URL,
+        ex_force_base_url=BASE_URL,
+        ex_force_auth_version=AUTH_VERSION,
+        ex_tenant_name=TENANT,
+        ex_service_name=SERVICE_NAME,
+        ex_service_type=SERVICE_TYPE,
+        ex_service_region=FORGE_REGION
     )
 
     print '** Gathering the cloud information **\n'
@@ -414,13 +416,13 @@ def createInventory():
     driver = cls(
         username,
         password,
-        ex_force_auth_url='https://cloud.forgeservicelab.fi:5001',
-        ex_force_base_url='https://cloud.forgeservicelab.fi:8777/v2/weego',
-        ex_force_auth_version='2.0_password',
-        ex_tenant_name='weego',
-        ex_service_name='nova',
-        ex_service_type='compute',
-        ex_service_region='KajaaniDC1-prod'
+        ex_force_auth_url=AUTH_URL,
+        ex_force_base_url=BASE_URL,
+        ex_force_auth_version=AUTH_VERSION,
+        ex_tenant_name=TENANT,
+        ex_service_name=SERVICE_NAME,
+        ex_service_type=SERVICE_TYPE,
+        ex_service_region=FORGE_REGION
     )
 
     print '** Gathering the cloud information **\n'
